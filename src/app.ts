@@ -1,7 +1,13 @@
 import express, { json } from 'express';
-import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
+import cors from 'cors';
+
+// TODO Config Database and decomment this lines.
+// Connect to DB
+// import { connectDB } from './database/db.config.js';
+
+// connectDB();
 
 // Routes
 import keepRoutes from './routes/keep.routes';

@@ -1,5 +1,12 @@
-import { Handler } from 'express';
+import { Request, Response } from 'express';
+import { keepSetGreetings } from '../repositories/keep.repository';
 
-export const getGreetings: Handler = async (req, res) => {
-  res.json({ msg: 'Hello World' });
+export const getGreetings = (req: Request, res: Response) => {
+  const response = keepSetGreetings();
+
+  try {
+    return res.json(response);
+  } catch (error) {
+    console.log(error);
+  }
 };
